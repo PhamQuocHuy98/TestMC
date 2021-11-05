@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import '../../utils/app_colors.dart';
 import 'text_size.dart';
@@ -91,9 +90,8 @@ class AppTextTheme {
           fontFamily: 'Roboto',
         ),
         button: TextStyle(
-          fontSize: TextSize.size12,
-          fontWeight: FontWeight.w500,
-          letterSpacing: 1.6,
+          fontSize: TextSize.size13,
+          fontWeight: FontWeight.w900,
           fontStyle: FontStyle.normal,
           color: Colors.white,
           fontFamily: 'Roboto',
@@ -192,11 +190,11 @@ class AppTextTheme {
           fontFamily: 'GABRIOLA',
         ),
         button: TextStyle(
-          fontSize: TextSize.size14,
-          fontWeight: FontWeight.w500,
-          letterSpacing: 0.75,
+          fontSize: TextSize.size13,
+          fontWeight: FontWeight.w900,
+          fontStyle: FontStyle.normal,
           color: Colors.white,
-          fontFamily: 'GABRIOLA',
+          fontFamily: 'Roboto',
         ),
         caption: TextStyle(
           fontSize: TextSize.size12,

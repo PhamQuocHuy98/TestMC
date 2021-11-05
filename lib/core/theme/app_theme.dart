@@ -14,25 +14,25 @@ class AppThemes {
     primaryColor: AppColor.primaryColor,
     platform: TargetPlatform.iOS,
     scaffoldBackgroundColor: AppColor.backgroundColor,
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: AppColor.colorTabar,
     ),
     appBarTheme: AppBarTheme(
       color: AppColor.backgroundColor,
-      iconTheme: IconThemeData(color: Colors.black),
+      iconTheme: const IconThemeData(color: Colors.black),
       textTheme: AppTextTheme.getLightTextTheme(),
     ),
-    colorScheme: ColorScheme.light(
+    colorScheme: const ColorScheme.light(
       primary: AppColor.grey,
       primaryVariant: AppColor.whiteLilac,
       // secondary: _lightSecondaryColor,
     ),
-    snackBarTheme: SnackBarThemeData(
+    snackBarTheme: const SnackBarThemeData(
         backgroundColor: AppColor.blackPearl, actionTextColor: AppColor.white),
-    iconTheme: IconThemeData(
+    iconTheme: const IconThemeData(
       color: AppColor.nevada,
     ),
-    popupMenuTheme: PopupMenuThemeData(color: AppColor.blue),
+    popupMenuTheme: const PopupMenuThemeData(color: AppColor.blue),
     textTheme: AppTextTheme.getLightTextTheme(),
     buttonTheme: ButtonThemeData(
       shape: RoundedRectangleBorder(
@@ -52,25 +52,25 @@ class AppThemes {
         fontWeight: FontWeight.normal,
         fontFamily: 'Roboto',
       ),
-      border: OutlineInputBorder(
+      border: const OutlineInputBorder(
         borderSide: BorderSide(width: 1.0),
         borderRadius: BorderRadius.all(
           Radius.circular(8.0),
         ),
       ),
-      enabledBorder: OutlineInputBorder(
+      enabledBorder: const  OutlineInputBorder(
         borderSide: BorderSide(color: AppColor.nevada, width: 1.2),
         borderRadius: BorderRadius.all(Radius.circular(8.0)),
       ),
-      focusedBorder: OutlineInputBorder(
+      focusedBorder: const OutlineInputBorder(
         borderSide: BorderSide(color: AppColor.primaryColor),
         borderRadius: BorderRadius.all(Radius.circular(8.0)),
       ),
-      errorBorder: OutlineInputBorder(
+      errorBorder: const OutlineInputBorder(
         borderSide: BorderSide(color: AppColor.brinkPink),
         borderRadius: BorderRadius.all(Radius.circular(8.0)),
       ),
-      focusedErrorBorder: OutlineInputBorder(
+      focusedErrorBorder: const OutlineInputBorder(
         borderSide: BorderSide(
           color: AppColor.brinkPink,
         ),
@@ -87,27 +87,27 @@ class AppThemes {
     //primarySwatch: _darkPrimaryColor, //cant be Color on MaterialColor so it can compute different shades.
     accentColor: AppColor.blue, //prefix icon color form input on focus
     scaffoldBackgroundColor: AppColor.ebonyClay,
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: AppColor.blue,
     ),
     appBarTheme: AppBarTheme(
       color: AppColor.blue,
-      iconTheme: IconThemeData(color: Colors.white),
+      iconTheme: const IconThemeData(color: Colors.white),
       textTheme: AppTextTheme.getDarkTextTheme(),
     ),
-    colorScheme: ColorScheme.dark(
+    colorScheme: const ColorScheme.dark(
       primary: AppColor.blue,
       primaryVariant: AppColor.ebonyClay,
     ),
-    snackBarTheme: SnackBarThemeData(
+    snackBarTheme: const SnackBarThemeData(
       contentTextStyle: TextStyle(color: Colors.white),
       backgroundColor: AppColor.blackPearl,
       actionTextColor: Colors.white,
     ),
-    iconTheme: IconThemeData(
+    iconTheme: const IconThemeData(
       color: AppColor.nevada, //_darkIconColor,
     ),
-    popupMenuTheme: PopupMenuThemeData(color: AppColor.blue),
+    popupMenuTheme: const  PopupMenuThemeData(color: AppColor.blue),
     textTheme: AppTextTheme.getDarkTextTheme(),
     buttonTheme: ButtonThemeData(
       shape: RoundedRectangleBorder(
@@ -117,7 +117,7 @@ class AppThemes {
     ),
 
     unselectedWidgetColor: AppColor.blue,
-    inputDecorationTheme: InputDecorationTheme(
+    inputDecorationTheme: const InputDecorationTheme(
       //prefixStyle: TextStyle(color: AppColor.nevada),
       border: OutlineInputBorder(
         borderSide: BorderSide(width: 1.0),
