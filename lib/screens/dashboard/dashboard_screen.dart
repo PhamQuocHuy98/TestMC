@@ -1,11 +1,7 @@
 import 'dart:ui';
-
 import 'package:demo_mc/screens/discover/discover_screen.dart';
-import 'package:demo_mc/widgets/custom_avt_with_info.dart';
-import 'package:demo_mc/widgets/round_corner_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -67,12 +63,13 @@ class CustomItemBottomNav extends StatefulWidget {
   final Function(int index) onTap;
   final Color activeColor;
   final Color inactiveColor;
-  CustomItemBottomNav({
+  const CustomItemBottomNav({
+    Key? key,
     this.currentIndex = 0,
     this.activeColor = Colors.black,
     this.inactiveColor = Colors.black,
     required this.onTap,
-  });
+  }) : super(key: key);
   @override
   _CustomItemBottomNavState createState() => _CustomItemBottomNavState();
 }
@@ -81,7 +78,7 @@ class _CustomItemBottomNavState extends State<CustomItemBottomNav> {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(maxHeight: 100),
+      constraints: const BoxConstraints(maxHeight: 100),
       child: Row(
         children: [
           Expanded(
