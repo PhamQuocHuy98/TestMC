@@ -1,4 +1,5 @@
 import 'package:demo_mc/screens/login/login_bloc.dart';
+import 'package:demo_mc/utils/routes.dart';
 import 'package:demo_mc/widgets/custom_appbar.dart';
 import 'package:demo_mc/widgets/custom_button.dart';
 import 'package:demo_mc/widgets/custom_textfield.dart';
@@ -39,7 +40,9 @@ class LoginScreen extends StatelessWidget {
                 PrimaryButton(
                   width: double.infinity,
                   labelText: 'log in',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(Routes.dashboard);
+                  },
                 ),
               ],
             ),

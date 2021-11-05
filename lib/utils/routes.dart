@@ -1,3 +1,5 @@
+import 'package:demo_mc/screens/dashboard/dashboard_screen.dart';
+import 'package:demo_mc/screens/discover/discover_screen.dart';
 import 'package:demo_mc/screens/login/screen.dart';
 import 'package:demo_mc/screens/register/register_screen.dart';
 import 'package:demo_mc/screens/splash/splash_screen.dart';
@@ -8,6 +10,7 @@ class Routes {
   static const String dashboard = '/dashboard';
   static const String login = '/login';
   static const String register = '/register';
+  static const String discover = '/discover';
 }
 
 class RouteGenerator {
@@ -26,6 +29,16 @@ class RouteGenerator {
       case Routes.register:
         return CupertinoPageRoute(
           builder: (context) => RegisterScreen(),
+          settings: settings,
+        );
+      case Routes.discover:
+        return CupertinoPageRoute(
+          builder: (context) => DiscoverScreen(),
+          settings: settings,
+        );
+      case Routes.dashboard:
+        return CupertinoPageRoute(
+          builder: (context) => const DashboardScreen(),
           settings: settings,
         );
       default:
