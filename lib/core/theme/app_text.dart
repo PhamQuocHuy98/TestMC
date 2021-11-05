@@ -31,9 +31,8 @@ class AppTextTheme {
         // spas title
         headline4: TextStyle(
           fontSize: TextSize.size34,
-          fontWeight: FontWeight.normal,
+          fontWeight: FontWeight.w400,
           color: AppColor.primaryColor,
-          letterSpacing: -0.3,
           fontStyle: FontStyle.normal,
           fontFamily: 'Montserrat',
         ),

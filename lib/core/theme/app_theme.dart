@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../utils/app_colors.dart';
@@ -58,23 +57,17 @@ class AppThemes {
           Radius.circular(8.0),
         ),
       ),
-      enabledBorder: const  OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.nevada, width: 1.2),
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+      enabledBorder: const OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.black, width: 2),
       ),
       focusedBorder: const OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.primaryColor),
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        borderSide: BorderSide(color: Colors.black, width: 2),
       ),
       errorBorder: const OutlineInputBorder(
         borderSide: BorderSide(color: AppColor.brinkPink),
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
       ),
       focusedErrorBorder: const OutlineInputBorder(
-        borderSide: BorderSide(
-          color: AppColor.brinkPink,
-        ),
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        borderSide: BorderSide(color: AppColor.brinkPink, width: 2),
       ),
 
       fillColor: const Color(0xffFAFAFA),
@@ -107,7 +100,7 @@ class AppThemes {
     iconTheme: const IconThemeData(
       color: AppColor.nevada, //_darkIconColor,
     ),
-    popupMenuTheme: const  PopupMenuThemeData(color: AppColor.blue),
+    popupMenuTheme: const PopupMenuThemeData(color: AppColor.blue),
     textTheme: AppTextTheme.getDarkTextTheme(),
     buttonTheme: ButtonThemeData(
       shape: RoundedRectangleBorder(
@@ -126,20 +119,16 @@ class AppThemes {
         ),
       ),
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.nevada, width: 1.0),
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        borderSide: BorderSide(color: Colors.black, width: 2),
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.blue),
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        borderSide: BorderSide(color: Colors.black, width: 2),
       ),
       errorBorder: OutlineInputBorder(
         borderSide: BorderSide(color: AppColor.brinkPink),
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
       ),
       focusedErrorBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.brinkPink),
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        borderSide: BorderSide(color: AppColor.brinkPink, width: 2),
       ),
       fillColor: AppColor.backgroundColor,
     ),
