@@ -1,4 +1,5 @@
 import 'package:demo_mc/screens/login/screen.dart';
+import 'package:demo_mc/screens/splash/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 
 class Routes {
@@ -12,7 +13,12 @@ class RouteGenerator {
     switch (settings.name) {
       case Routes.init:
         return CupertinoPageRoute(
-          builder: (context) => const LoginScreen(),
+          builder: (context) => const SplashScreen(),
+          settings: settings,
+        );
+      case Routes.login:
+        return CupertinoPageRoute(
+          builder: (context) =>  LoginScreen(),
           settings: settings,
         );
       default:

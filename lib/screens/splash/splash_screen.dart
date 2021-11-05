@@ -1,13 +1,18 @@
 import 'package:demo_mc/utils/app_assets.dart';
-import 'package:demo_mc/utils/app_constants.dart';
 import 'package:demo_mc/utils/dimen.dart';
+import 'package:demo_mc/utils/routes.dart';
 import 'package:demo_mc/widgets/custom_avt_with_info.dart';
 import 'package:demo_mc/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     Dimen.height = MediaQuery.of(context).size.height;
@@ -17,7 +22,7 @@ class SplashScreen extends StatelessWidget {
         children: [
           _buildBackGroundImage(),
           _buildLogoCenter(),
-          _buildAvatarWithInfo(context),
+          _buildAvatarWithInfo(),
           _buildButton(),
         ],
       ),
@@ -36,7 +41,9 @@ class SplashScreen extends StatelessWidget {
               Expanded(
                 child: PrimaryButton(
                   labelText: 'log in',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(Routes.login);
+                  },
                   color: Colors.white,
                   colorText: Colors.black,
                 ),
@@ -53,7 +60,7 @@ class SplashScreen extends StatelessWidget {
         ));
   }
 
-  _buildAvatarWithInfo(BuildContext context) {
+  _buildAvatarWithInfo() {
     return const Positioned(
       bottom: 100,
       left: 20,
