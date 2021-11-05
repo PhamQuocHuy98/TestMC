@@ -2,7 +2,7 @@ import 'package:demo_mc/core/theme/text_size.dart';
 import 'package:demo_mc/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatefulWidget {
+class CustomTextField extends StatelessWidget {
   const CustomTextField({
     Key? key,
     this.controller,
@@ -15,12 +15,12 @@ class CustomTextField extends StatefulWidget {
     this.errorText = '',
     this.readOnly = false,
     this.textAlign = TextAlign.start,
-    this.isRequired = true,
     this.hintText = '',
     this.textInputAction = TextInputAction.next,
     this.onFieldSubmitted,
     this.maxLength,
     this.onTap,
+    this.isPassword = false,
   }) : super(key: key);
 
   final TextEditingController? controller;
@@ -35,22 +35,11 @@ class CustomTextField extends StatefulWidget {
   final String? errorText;
   final void Function(String?)? onChanged;
   final TextAlign textAlign;
-  final bool isRequired;
   final String hintText;
   final TextInputAction textInputAction;
   final Function(String)? onFieldSubmitted;
   final int? maxLength;
-
-  @override
-  _CustomTextFieldState createState() => _CustomTextFieldState();
-}
-
-class _CustomTextFieldState extends State<CustomTextField> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
+  final bool? isPassword;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +52,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             autovalidateMode: AutovalidateMode.onUserInteraction,
             decoration: InputDecoration(
               filled: true,
-              hintText: widget.hintText,
+              hintText: hintText,
               errorMaxLines: 2,
               border: const OutlineInputBorder(
                 borderSide: BorderSide(width: 1.0),
@@ -76,18 +65,20 @@ class _CustomTextFieldState extends State<CustomTextField> {
                     fontSize: TextSize.size12,
                   ),
             ),
-            controller: widget.controller,
-            onChanged: widget.onChanged,
-            keyboardType: widget.keyboardType,
-            maxLines: widget.maxLines,
-            minLines: widget.minLines,
-            validator: widget.validator,
-            readOnly: widget.readOnly,
-            onTap: widget.onTap,
-            textAlign: widget.textAlign,
-            textInputAction: widget.textInputAction,
-            onFieldSubmitted: widget.onFieldSubmitted,
-            maxLength: widget.maxLength,
+            controller: controller,
+            onChanged: onChanged,
+            keyboardType: keyboardType,
+            maxLines: 1,
+            minLines: minLines,
+            validator: validator,
+            readOnly: readOnly,
+            onTap: onTap,
+            textAlign: textAlign,
+            textInputAction: textInputAction,
+            onFieldSubmitted: onFieldSubmitted,
+            maxLength: maxLength,
+            obscuringCharacter: '*',
+            obscureText: isPassword ?? false,
           ),
         ],
       ),

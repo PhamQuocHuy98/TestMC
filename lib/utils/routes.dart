@@ -1,4 +1,5 @@
 import 'package:demo_mc/screens/login/screen.dart';
+import 'package:demo_mc/screens/register/register_screen.dart';
 import 'package:demo_mc/screens/splash/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -6,6 +7,7 @@ class Routes {
   static const String init = '/';
   static const String dashboard = '/dashboard';
   static const String login = '/login';
+  static const String register = '/register';
 }
 
 class RouteGenerator {
@@ -18,7 +20,12 @@ class RouteGenerator {
         );
       case Routes.login:
         return CupertinoPageRoute(
-          builder: (context) =>  LoginScreen(),
+          builder: (context) => LoginScreen(),
+          settings: settings,
+        );
+      case Routes.register:
+        return CupertinoPageRoute(
+          builder: (context) => RegisterScreen(),
           settings: settings,
         );
       default:

@@ -52,7 +52,9 @@ class _SplashScreenState extends State<SplashScreen> {
               Expanded(
                 child: PrimaryButton(
                   labelText: 'register',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(Routes.register);
+                  },
                 ),
               )
             ],
