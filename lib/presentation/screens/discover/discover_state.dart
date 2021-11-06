@@ -1,4 +1,4 @@
-import 'package:demo_mc/data/models/user_model.dart';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 

@@ -25,7 +25,7 @@ class BaseResponse<T> {
 
   // ERROR HANDLER
   bool get hasError {
-    return errors != null ? errors!.length > 0 : (data == null);
+    return errors != null ? errors!.isNotEmpty : (data == null);
   }
 
   String get errorMessage {

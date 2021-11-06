@@ -1,5 +1,4 @@
 import 'package:demo_mc/utils/app_constants.dart';
-import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class SettingLocalStorage {

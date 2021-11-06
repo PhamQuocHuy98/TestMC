@@ -1,8 +1,5 @@
-import 'dart:math';
-
 import 'package:demo_mc/core/api/api.dart';
 import 'package:demo_mc/core/models/base_response_api_model.dart';
-import 'package:demo_mc/data/models/user_model.dart';
 
 abstract class DiscoverApi {
   Future<BaseResponse<List<String>>> getImages();

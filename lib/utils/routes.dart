@@ -30,7 +30,7 @@ class RouteGenerator {
         return CupertinoPageRoute(
           builder: (context) => BlocProvider(
             create: (_) => LoginBloc(authApi: getIt.get()),
-            child: LoginScreen(),
+            child: const LoginScreen(),
           ),
           settings: settings,
         );
@@ -38,7 +38,7 @@ class RouteGenerator {
         return CupertinoPageRoute(
           builder: (context) => BlocProvider(
             create: (_) => RegisterBloc(authApi: getIt.get()),
-            child: RegisterScreen(),
+            child: const RegisterScreen(),
           ),
           settings: settings,
         );
@@ -46,7 +46,7 @@ class RouteGenerator {
         return CupertinoPageRoute(
           builder: (context) => BlocProvider(
             create: (_) => DiscoverBloc(disCoverApi: getIt.get()),
-            child: DiscoverScreen(),
+            child: const DiscoverScreen(),
           ),
           settings: settings,
         );
@@ -59,7 +59,7 @@ class RouteGenerator {
                     DiscoverBloc(disCoverApi: getIt.get()),
               ),
             ],
-            child:const DashboardScreen(),
+            child: const DashboardScreen(),
           ),
           settings: settings,
         );

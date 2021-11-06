@@ -20,7 +20,7 @@ class UserModel implements BaseUserModel {
 
   @override
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = {};
     if (id != null || id != '') data['id'] = id;
 
     data["email"] = email.toLowerCase();

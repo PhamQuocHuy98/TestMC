@@ -1,4 +1,3 @@
-import 'dart:io';
 
 import 'package:bmprogresshud/progresshud.dart';
 import 'package:demo_mc/core/language/internationalization.dart';
@@ -18,7 +17,7 @@ import 'login_bloc.dart';
 import 'login_state.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();

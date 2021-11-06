@@ -3,7 +3,6 @@ import 'package:demo_mc/data/datasources/repos/setting_local_repo.dart';
 import 'package:demo_mc/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class AppBloc extends Cubit<AppData> {
   AppBloc({required this.settingRepo})

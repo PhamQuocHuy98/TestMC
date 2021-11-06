@@ -16,7 +16,7 @@ import 'discover_bloc.dart';
 import 'discover_event.dart';
 
 class DiscoverScreen extends StatefulWidget {
-  DiscoverScreen({Key? key}) : super(key: key);
+  const DiscoverScreen({Key? key}) : super(key: key);
 
   @override
   State<DiscoverScreen> createState() => _DiscoverScreenState();

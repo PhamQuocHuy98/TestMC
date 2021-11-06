@@ -19,7 +19,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   void initState() {
     super.initState();
     listTab = [
-      DiscoverScreen(),
+      const DiscoverScreen(),
       const SizedBox(),
       const SizedBox(),
       const SizedBox(),
