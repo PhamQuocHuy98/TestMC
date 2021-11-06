@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:bmprogresshud/progresshud.dart';
 import 'package:demo_mc/main.dart';
 import 'package:demo_mc/presentation/screens/splash/splash_screen.dart';
 import 'package:demo_mc/utils/app_constants.dart';
@@ -41,35 +42,38 @@ class _MyAppState extends State<MyApp> {
       create: (BuildContext context) => getIt.get<AppBloc>(),
       child: BlocBuilder<AppBloc, AppData>(
         builder: (BuildContext context, state) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: state.currentTheme == SupportedTheme.light
-                ? AppThemes.lightTheme
-                : AppThemes.darkTheme,
-            home: const SplashScreen(),
-            onGenerateRoute: RouteGenerator.buildRoutes,
-            localizationsDelegates: const [
-              SLocalizationsDelegate(),
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            localeResolutionCallback: (locale, supportedLocales) {
-              // Check if the current device locale is supported
-              for (var supportedLocale in supportedLocales) {
-                if (supportedLocale.languageCode == locale?.languageCode) {
-                  return supportedLocale;
+          return ProgressHud(
+            isGlobalHud: true,
+            child: MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: state.currentTheme == SupportedTheme.light
+                  ? AppThemes.lightTheme
+                  : AppThemes.darkTheme,
+              home: const SplashScreen(),
+              onGenerateRoute: RouteGenerator.buildRoutes,
+              localizationsDelegates: const [
+                SLocalizationsDelegate(),
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              localeResolutionCallback: (locale, supportedLocales) {
+                // Check if the current device locale is supported
+                for (var supportedLocale in supportedLocales) {
+                  if (supportedLocale.languageCode == locale?.languageCode) {
+                    return supportedLocale;
+                  }
                 }
-              }
-              // If the locale of the device is not supported, use the first one
-              // from the list (English, in this case).
-              return supportedLocales.first;
-            },
-            supportedLocales: const [
-              Locale(LocaleKey.en),
-              Locale(LocaleKey.vi),
-            ],
-            locale: state.locale ?? const Locale(LocaleKey.en),
+                // If the locale of the device is not supported, use the first one
+                // from the list (English, in this case).
+                return supportedLocales.first;
+              },
+              supportedLocales: const [
+                Locale(LocaleKey.en),
+                Locale(LocaleKey.vi),
+              ],
+              locale: state.locale ?? const Locale(LocaleKey.en),
+            ),
           );
         },
       ),

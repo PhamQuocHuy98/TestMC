@@ -13,3 +13,20 @@ abstract class Api {
     T Function(dynamic json)? parseJson,
   });
 }
+
+class APIImpl extends Api {
+  @override
+  Future<BaseResponse<T>> doGet<T>(String url,
+      {Map<String, dynamic>? queryParams,
+      T Function(dynamic json)? parseJson}) {
+    // TODO: implement doGet
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<BaseResponse<T>> doPost<T>(String url, body,
+      {T Function(dynamic json)? parseJson}) {
+    // TODO: implement doPost
+    throw UnimplementedError();
+  }
+}
