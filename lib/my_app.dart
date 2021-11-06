@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:demo_mc/main.dart';
+import 'package:demo_mc/presentation/screens/splash/splash_screen.dart';
 import 'package:demo_mc/utils/app_constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ import 'core/di/injection/injection.dart';
 import 'core/language/internationalization.dart';
 import 'core/theme/app_theme.dart';
 import 'core/theme/theme.dart';
-import 'screens/splash/splash_screen.dart';
+
 import 'utils/routes.dart';
 
 Future<void> runMyApp() async {
@@ -53,17 +54,17 @@ class _MyAppState extends State<MyApp> {
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],
-            // localeResolutionCallback: (locale, supportedLocales) {
-            //   // Check if the current device locale is supported
-            //   for (var supportedLocale in supportedLocales) {
-            //     if (supportedLocale.languageCode == locale?.languageCode) {
-            //       return supportedLocale;
-            //     }
-            //   }
-            //   // If the locale of the device is not supported, use the first one
-            //   // from the list (English, in this case).
-            //   return supportedLocales.first;
-            // },
+            localeResolutionCallback: (locale, supportedLocales) {
+              // Check if the current device locale is supported
+              for (var supportedLocale in supportedLocales) {
+                if (supportedLocale.languageCode == locale?.languageCode) {
+                  return supportedLocale;
+                }
+              }
+              // If the locale of the device is not supported, use the first one
+              // from the list (English, in this case).
+              return supportedLocales.first;
+            },
             supportedLocales: const [
               Locale(LocaleKey.en),
               Locale(LocaleKey.vi),

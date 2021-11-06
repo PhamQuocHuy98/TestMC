@@ -1,8 +1,9 @@
-import 'package:demo_mc/screens/dashboard/dashboard_screen.dart';
-import 'package:demo_mc/screens/discover/discover_screen.dart';
-import 'package:demo_mc/screens/login/screen.dart';
-import 'package:demo_mc/screens/register/register_screen.dart';
-import 'package:demo_mc/screens/splash/splash_screen.dart';
+
+import 'package:demo_mc/presentation/screens/dashboard/dashboard_screen.dart';
+import 'package:demo_mc/presentation/screens/discover/discover_screen.dart';
+import 'package:demo_mc/presentation/screens/login/screen.dart';
+import 'package:demo_mc/presentation/screens/register/register_screen.dart';
+import 'package:demo_mc/presentation/screens/splash/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 
 class Routes {

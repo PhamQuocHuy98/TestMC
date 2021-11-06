@@ -1,14 +1,9 @@
 import 'dart:ui';
-
 import 'package:demo_mc/core/language/internationalization.dart';
-import 'package:demo_mc/utils/app_assets.dart';
-import 'package:demo_mc/utils/app_colors.dart';
+import 'package:demo_mc/presentation/widgets/custom_avt_with_info.dart';
+import 'package:demo_mc/presentation/widgets/round_corner_image.dart';
 import 'package:demo_mc/utils/app_constants.dart';
 import 'package:demo_mc/utils/app_helper.dart';
-import 'package:demo_mc/utils/dimen.dart';
-import 'package:demo_mc/widgets/custom_appbar.dart';
-import 'package:demo_mc/widgets/custom_avt_with_info.dart';
-import 'package:demo_mc/widgets/round_corner_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';

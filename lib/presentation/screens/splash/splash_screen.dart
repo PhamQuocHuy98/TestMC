@@ -1,10 +1,11 @@
 import 'package:demo_mc/core/language/internationalization.dart';
+import 'package:demo_mc/presentation/widgets/custom_avt_with_info.dart';
+import 'package:demo_mc/presentation/widgets/custom_button.dart';
 import 'package:demo_mc/utils/app_assets.dart';
 import 'package:demo_mc/utils/app_constants.dart';
 import 'package:demo_mc/utils/dimen.dart';
 import 'package:demo_mc/utils/routes.dart';
-import 'package:demo_mc/widgets/custom_avt_with_info.dart';
-import 'package:demo_mc/widgets/custom_button.dart';
+
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

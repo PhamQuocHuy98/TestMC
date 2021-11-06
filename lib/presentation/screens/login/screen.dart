@@ -1,13 +1,14 @@
 import 'package:demo_mc/core/language/internationalization.dart';
-import 'package:demo_mc/screens/login/login_bloc.dart';
+import 'package:demo_mc/presentation/widgets/custom_appbar.dart';
+import 'package:demo_mc/presentation/widgets/custom_button.dart';
+import 'package:demo_mc/presentation/widgets/custom_textfield.dart';
+import 'package:demo_mc/presentation/widgets/keyboard_dismissable_wrapper.dart';
 import 'package:demo_mc/utils/app_constants.dart';
 import 'package:demo_mc/utils/app_helper.dart';
 import 'package:demo_mc/utils/routes.dart';
-import 'package:demo_mc/widgets/custom_appbar.dart';
-import 'package:demo_mc/widgets/custom_button.dart';
-import 'package:demo_mc/widgets/custom_textfield.dart';
-import 'package:demo_mc/widgets/keyboard_dismissable_wrapper.dart';
 import 'package:flutter/material.dart';
+
+import 'login_bloc.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);

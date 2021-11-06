@@ -1,6 +1,6 @@
 import 'dart:ui';
-import 'package:demo_mc/screens/discover/discover_screen.dart';
-import 'package:demo_mc/screens/profile/profile_screen.dart';
+import 'package:demo_mc/presentation/screens/discover/discover_screen.dart';
+import 'package:demo_mc/presentation/screens/profile/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
