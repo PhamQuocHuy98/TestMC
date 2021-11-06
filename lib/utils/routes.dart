@@ -1,5 +1,6 @@
 import 'package:demo_mc/main.dart';
 import 'package:demo_mc/presentation/screens/dashboard/dashboard_screen.dart';
+import 'package:demo_mc/presentation/screens/discover/discover_bloc.dart';
 import 'package:demo_mc/presentation/screens/discover/discover_screen.dart';
 import 'package:demo_mc/presentation/screens/login/login_bloc.dart';
 import 'package:demo_mc/presentation/screens/login/screen.dart';
@@ -43,12 +44,23 @@ class RouteGenerator {
         );
       case Routes.discover:
         return CupertinoPageRoute(
-          builder: (context) => DiscoverScreen(),
+          builder: (context) => BlocProvider(
+            create: (_) => DiscoverBloc(disCoverApi: getIt.get()),
+            child: DiscoverScreen(),
+          ),
           settings: settings,
         );
       case Routes.dashboard:
         return CupertinoPageRoute(
-          builder: (context) => const DashboardScreen(),
+          builder: (context) => MultiBlocProvider(
+            providers: [
+              BlocProvider<DiscoverBloc>(
+                create: (BuildContext context) =>
+                    DiscoverBloc(disCoverApi: getIt.get()),
+              ),
+            ],
+            child:const DashboardScreen(),
+          ),
           settings: settings,
         );
       default:

@@ -1,6 +1,7 @@
 import 'package:demo_mc/core/api/api.dart';
 import 'package:demo_mc/main.dart';
 import 'package:demo_mc/network/auth_api.dart';
+import 'package:demo_mc/network/discover_api.dart';
 
 import '../di_base.dart';
 
@@ -10,6 +11,9 @@ class ApiModule extends DIModule {
     getIt.registerSingleton<Api>(APIImpl());
     getIt.registerSingleton<AuthApi>(
       AuthApiImpl(api: getIt.get()),
+    );
+    getIt.registerSingleton<DiscoverApi>(
+      DiscoverApiImpl(api: getIt.get()),
     );
   }
 }
