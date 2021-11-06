@@ -1,17 +1,11 @@
-
 import 'package:demo_mc/data/datasources/local/auth_local_storage.dart';
 
-
 abstract class AuthRepo {
- 
   Future<String?> getAuthToken();
- 
   Future<bool> saveAuthToken(String authToken);
 }
 
 class AuthRepoImpl implements AuthRepo {
-  // local storage or remote api will be injected via constructor using DI
-  
   AuthRepoImpl({required this.authLocalStorage});
 
   AuthLocalStorage authLocalStorage;
@@ -21,9 +15,7 @@ class AuthRepoImpl implements AuthRepo {
     return authLocalStorage.getAuthToken();
   }
 
-
   @override
   Future<bool> saveAuthToken(String authToken) async =>
       authLocalStorage.saveAuthToken(authToken);
-
 }
