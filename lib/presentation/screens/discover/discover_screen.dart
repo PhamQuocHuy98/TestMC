@@ -4,6 +4,7 @@ import 'package:demo_mc/presentation/screens/discover/discover_state.dart';
 import 'package:demo_mc/presentation/widgets/custom_avt_with_info.dart';
 import 'package:demo_mc/presentation/widgets/custom_button.dart';
 import 'package:demo_mc/presentation/widgets/round_corner_image.dart';
+import 'package:demo_mc/presentation/widgets/title_headline.dart';
 import 'package:demo_mc/utils/app_constants.dart';
 import 'package:demo_mc/utils/app_helper.dart';
 import 'package:flutter/cupertino.dart';
@@ -49,36 +50,9 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    AppHelper.capitalizeFirst(
-                        S.of(context).translate(LanguageKey.discover) ?? ''),
-                    style: Theme.of(context).textTheme.headline4,
-                  ),
+                  _buildTitle(),
                   const SizedBox(height: 20),
-                  Container(
-                    alignment: Alignment.center,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          S.of(context).translate(LanguageKey.newDate) ??
-                              ''.toUpperCase(),
-                          style:
-                              Theme.of(context).textTheme.bodyText2!.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        ),
-                        const SizedBox(height: 10),
-                        Center(
-                          child: ImageGridview(
-                            imgUrl: images[0],
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        const CustomAvtWithInfo(),
-                      ],
-                    ),
-                  ),
+                  _buildNewDay(images[0]),
                   const SizedBox(height: 20),
                   Container(
                     alignment: Alignment.centerLeft,
@@ -91,33 +65,9 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  StaggeredGridView.countBuilder(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 12,
-                    itemCount: images.length,
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return ImageGridview(
-                        imgUrl: images[index],
-                      );
-                    },
-                    staggeredTileBuilder: (int index) {
-                      return StaggeredTile.count(1, index.isEven ? 1.2 : 1.8);
-                    },
-                  ),
+                  _buildGridViewImage(images),
                   const SizedBox(height: 20),
-                  Center(
-                    child: PrimaryButton(
-                      labelText:
-                          S.of(context).translate(LanguageKey.seeMore) ?? '',
-                      colorText: Colors.black,
-                      width: double.infinity,
-                      color: Colors.white,
-                      onPressed: () {},
-                    ),
-                  ),
+                  _buildButton(),
                   const SizedBox(height: 20),
                 ],
               ),
@@ -129,6 +79,67 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
         }
         return const SizedBox();
       },
+    );
+  }
+
+  _buildTitle() {
+    return TitleHeadline(
+        text: S.of(context).translate(LanguageKey.discover) ?? '');
+  }
+
+  _buildNewDay(String image) {
+    return Container(
+      alignment: Alignment.center,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            S.of(context).translate(LanguageKey.newDate) ?? ''.toUpperCase(),
+            style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
+          const SizedBox(height: 10),
+          Center(
+            child: ImageGridview(
+              imgUrl: image,
+            ),
+          ),
+          const SizedBox(height: 20),
+          const CustomAvtWithInfo(),
+        ],
+      ),
+    );
+  }
+
+  _buildGridViewImage(List<String> images) {
+    return StaggeredGridView.countBuilder(
+      crossAxisCount: 2,
+      crossAxisSpacing: 10,
+      mainAxisSpacing: 12,
+      itemCount: images.length,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) {
+        return ImageGridview(
+          imgUrl: images[index],
+        );
+      },
+      staggeredTileBuilder: (int index) {
+        return StaggeredTile.count(1, index.isEven ? 1.2 : 1.8);
+      },
+    );
+  }
+
+  _buildButton() {
+    return Center(
+      child: PrimaryButton(
+        labelText: S.of(context).translate(LanguageKey.seeMore) ?? '',
+        colorText: Colors.black,
+        width: double.infinity,
+        color: Colors.white,
+        onPressed: () {},
+      ),
     );
   }
 }

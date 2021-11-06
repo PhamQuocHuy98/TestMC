@@ -6,6 +6,7 @@ import 'package:demo_mc/presentation/widgets/custom_appbar.dart';
 import 'package:demo_mc/presentation/widgets/custom_button.dart';
 import 'package:demo_mc/presentation/widgets/custom_textfield.dart';
 import 'package:demo_mc/presentation/widgets/keyboard_dismissable_wrapper.dart';
+import 'package:demo_mc/presentation/widgets/title_headline.dart';
 import 'package:demo_mc/utils/app_constants.dart';
 import 'package:demo_mc/utils/app_helper.dart';
 import 'package:demo_mc/utils/routes.dart';
@@ -23,9 +24,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmController = TextEditingController();
+
+  RegisterBloc get registerBloc => BlocProvider.of(context);
   @override
   Widget build(BuildContext context) {
-    RegisterBloc registerBloc = BlocProvider.of(context);
     return KeyboardDismiss(
       child: Scaffold(
         appBar: const CustomAppBar(),
@@ -50,88 +52,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(height: 20),
-                      Text(
-                        AppHelper.capitalizeFirst(
-                            S.of(context).translate(LanguageKey.register) ??
-                                ''),
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
+                      _buildTitle(),
                       const SizedBox(height: 20),
-                      CustomTextField(
-                        controller: emailController,
-                        validator: (String? email) {
-                          return S
-                              .of(context)
-                              .translate(registerBloc.onValidateEmail(email));
-                        },
-                      ),
+                      _buildEmail(),
                       const SizedBox(height: 20),
-                      CustomTextField(
-                        controller: passwordController,
-                        isPassword: true,
-                        validator: (String? password) {
-                          return S.of(context).translate(
-                              registerBloc.onValidatePassword(password));
-                        },
-                      ),
+                      _buildPassword(),
                       const SizedBox(height: 20),
-                      CustomTextField(
-                        controller: confirmController,
-                        isPassword: true,
-                        validator: (String? password) {
-                          return S.of(context).translate(
-                              registerBloc.onValidatePassword(password));
-                        },
-                      ),
+                      _buildConfirmPassword(),
                       const SizedBox(height: 20),
-                      PrimaryButton(
-                        width: double.infinity,
-                        labelText:
-                            S.of(context).translate(LanguageKey.signUp) ?? '',
-                        onPressed: () {
-                          context.read<RegisterBloc>().register(
-                                emailController.text,
-                                passwordController.text,
-                                confirmController.text,
-                              );
-                        },
-                      ),
+                      _buildButton(),
                       const SizedBox(height: 20),
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text:
-                                  S.of(context).translate(LanguageKey.bySignUp),
-                              style: Theme.of(context).textTheme.bodyText2,
-                            ),
-                            TextSpan(
-                              text:
-                                  ' ${S.of(context).translate(LanguageKey.termNService)}',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText2!
-                                  .copyWith(
-                                    decoration: TextDecoration.underline,
-                                  ),
-                            ),
-                            TextSpan(
-                              text:
-                                  ' ${S.of(context).translate(LanguageKey.and)} ',
-                              style: Theme.of(context).textTheme.bodyText2,
-                            ),
-                            TextSpan(
-                              text: S.of(context).translate(LanguageKey.policy),
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText2!
-                                  .copyWith(
-                                    decoration: TextDecoration.underline,
-                                  ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      _buildRichTextPolicy(),
                     ],
                   ),
                 ),
@@ -139,6 +70,87 @@ class _RegisterScreenState extends State<RegisterScreen> {
             },
           ),
         ),
+      ),
+    );
+  }
+
+  _buildTitle() {
+    return TitleHeadline(
+        text: S.of(context).translate(LanguageKey.register) ?? '');
+  }
+
+  _buildEmail() {
+    return CustomTextField(
+      controller: emailController,
+      validator: (String? email) {
+        return S.of(context).translate(registerBloc.onValidateEmail(email));
+      },
+    );
+  }
+
+  _buildPassword() {
+    return CustomTextField(
+      controller: passwordController,
+      isPassword: true,
+      validator: (String? password) {
+        return S
+            .of(context)
+            .translate(registerBloc.onValidatePassword(password));
+      },
+    );
+  }
+
+  _buildConfirmPassword() {
+    return CustomTextField(
+      controller: confirmController,
+      isPassword: true,
+      validator: (String? password) {
+        return S
+            .of(context)
+            .translate(registerBloc.onValidatePassword(password));
+      },
+    );
+  }
+
+  _buildButton() {
+    return PrimaryButton(
+      width: double.infinity,
+      labelText: S.of(context).translate(LanguageKey.signUp) ?? '',
+      onPressed: () {
+        context.read<RegisterBloc>().register(
+              emailController.text,
+              passwordController.text,
+              confirmController.text,
+            );
+      },
+    );
+  }
+
+  _buildRichTextPolicy() {
+    return RichText(
+      text: TextSpan(
+        children: [
+          TextSpan(
+            text: S.of(context).translate(LanguageKey.bySignUp),
+            style: Theme.of(context).textTheme.bodyText2,
+          ),
+          TextSpan(
+            text: ' ${S.of(context).translate(LanguageKey.termNService)}',
+            style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                  decoration: TextDecoration.underline,
+                ),
+          ),
+          TextSpan(
+            text: ' ${S.of(context).translate(LanguageKey.and)} ',
+            style: Theme.of(context).textTheme.bodyText2,
+          ),
+          TextSpan(
+            text: S.of(context).translate(LanguageKey.policy),
+            style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                  decoration: TextDecoration.underline,
+                ),
+          ),
+        ],
       ),
     );
   }
