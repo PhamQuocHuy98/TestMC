@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:demo_mc/screens/discover/discover_screen.dart';
-import 'package:demo_mc/widgets/custom_appbar.dart';
+import 'package:demo_mc/screens/profile/profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -23,23 +23,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       const SizedBox(),
       const SizedBox(),
       const SizedBox(),
-      Scaffold(
-        appBar: const CustomAppBar(),
-        body: Column(
-          children: [
-            Row(
-              children: [
-                CupertinoSwitch(
-                  onChanged: (bool value) async {},
-                  value: true,
-                  activeColor: Colors.green,
-                ),
-                const Expanded(child: Text('Change theme')),
-              ],
-            ),
-          ],
-        ),
-      ),
+       ProfileScreen(),
     ];
   }
 

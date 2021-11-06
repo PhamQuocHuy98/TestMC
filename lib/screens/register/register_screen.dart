@@ -26,9 +26,7 @@ class RegisterScreen extends StatelessWidget {
                 Text(
                   AppHelper.capitalizeFirst(
                       S.of(context).translate(LanguageKey.register)),
-                  style: Theme.of(context).textTheme.headline4?.copyWith(
-                        color: Colors.black,
-                      ),
+                  style: Theme.of(context).textTheme.headline4,
                 ),
                 const SizedBox(height: 20),
                 CustomTextField(

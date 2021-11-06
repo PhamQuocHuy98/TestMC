@@ -78,13 +78,13 @@ class AppThemes {
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     //primarySwatch: _darkPrimaryColor, //cant be Color on MaterialColor so it can compute different shades.
-    accentColor: AppColor.blue, //prefix icon color form input on focus
+    accentColor: AppColor.blackPearl, //prefix icon color form input on focus
     scaffoldBackgroundColor: AppColor.ebonyClay,
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: AppColor.blue,
     ),
     appBarTheme: AppBarTheme(
-      color: AppColor.blue,
+      color: AppColor.blackPearl,
       iconTheme: const IconThemeData(color: Colors.white),
       textTheme: AppTextTheme.getDarkTextTheme(),
     ),

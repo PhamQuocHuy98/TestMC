@@ -32,7 +32,7 @@ class AppTextTheme {
         headline4: TextStyle(
           fontSize: TextSize.size34,
           fontWeight: FontWeight.w400,
-          color: AppColor.primaryColor,
+          color: Colors.black,
           fontStyle: FontStyle.normal,
           fontFamily: 'Montserrat',
         ),
@@ -115,7 +115,7 @@ class AppTextTheme {
         headline1: TextStyle(
           fontSize: TextSize.size96,
           fontWeight: FontWeight.w300,
-          color: Colors.white70,
+          color: Colors.white,
           letterSpacing: -1.5,
           fontFamily: 'GABRIOLA',
         ),
@@ -140,10 +140,10 @@ class AppTextTheme {
         headline4: TextStyle(
           fontSize: TextSize.size34,
           fontWeight: FontWeight.normal,
-          color: AppColor.primaryColor,
           letterSpacing: -0.3,
           fontStyle: FontStyle.normal,
           fontFamily: 'GABRIOLA',
+          color: Colors.white,
         ),
         headline5: TextStyle(
           fontSize: TextSize.size24,

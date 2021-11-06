@@ -23,6 +23,8 @@ class ErrorMessage {
 
 class SharePrefKeys {
   final String authToken = 'authToken';
+  final String theme = 'theme';
+  final String locale = 'locale';
 }
 
 class LocaleKey {
@@ -40,10 +42,12 @@ class LanguageKey {
   static String signUp = "signUp";
   static String bySignUp = "bySignUp";
   static String termNService = "termNService";
-   static String policy = "policy";
+  static String policy = "policy";
   static String and = "and";
   static String discover = "discover";
   static String newDate = "newDate";
   static String browerAll = "browerAll";
   static String seeMore = "seeMore";
+   static String changeTheme = "changeTheme";
+    static String changeLanguage = "changeLanguage";
 }
