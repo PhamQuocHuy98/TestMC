@@ -3,6 +3,7 @@ import 'package:demo_mc/presentation/screens/dashboard/dashboard_screen.dart';
 import 'package:demo_mc/presentation/screens/discover/discover_screen.dart';
 import 'package:demo_mc/presentation/screens/login/login_bloc.dart';
 import 'package:demo_mc/presentation/screens/login/screen.dart';
+import 'package:demo_mc/presentation/screens/register/register_bloc.dart';
 import 'package:demo_mc/presentation/screens/register/register_screen.dart';
 import 'package:demo_mc/presentation/screens/splash/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -34,7 +35,10 @@ class RouteGenerator {
         );
       case Routes.register:
         return CupertinoPageRoute(
-          builder: (context) => RegisterScreen(),
+          builder: (context) => BlocProvider(
+            create: (_) => RegisterBloc(authApi: getIt.get()),
+            child: RegisterScreen(),
+          ),
           settings: settings,
         );
       case Routes.discover:
