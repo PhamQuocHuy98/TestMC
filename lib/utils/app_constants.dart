@@ -8,7 +8,7 @@ class AppConstant {
 
 class KeyDemo {
   static const String avt =
-      'https://phunugioi.com/wp-content/uploads/2020/03/hinh-nen-may-tinh-4k-de-thuong-scaled.jpg';
+      'https://cdn.pixabay.com/photo/2019/11/05/00/53/cellular-4602489_960_720.jpg';
 }
 
 class ErrorMessage {

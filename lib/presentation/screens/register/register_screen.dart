@@ -31,6 +31,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         appBar: const CustomAppBar(),
         body: Container(
           margin: const EdgeInsets.only(left: 20, right: 20),
+          alignment: Alignment.center,
           child: BlocConsumer<RegisterBloc, RegisterState>(
             listener: (context, state) {
               if (state is RegisterSuccessfullyState) {

@@ -44,6 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
           builder: (context, state) {
             return Container(
               margin: const EdgeInsets.only(left: 20, right: 20),
+              alignment: Alignment.center,
               child: SingleChildScrollView(
                 child: Form(
                   key: loginBloc.formKey,
