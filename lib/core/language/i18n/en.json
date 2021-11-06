@@ -11,5 +11,7 @@
     "browerAll": "Browse all",
     "seeMore": "see more",
     "changeTheme": "Change theme",
-    "changeLanguage": "Change Language"
+    "changeLanguage": "Change Language",
+    "emailInvalid": "Email invalid",
+    "passwordInvalid": "Password invalid"
 }

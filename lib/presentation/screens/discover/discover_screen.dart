@@ -34,7 +34,7 @@ class DiscoverScreen extends StatelessWidget {
           children: [
             Text(
               AppHelper.capitalizeFirst(
-                  S.of(context).translate(LanguageKey.discover)),
+                  S.of(context).translate(LanguageKey.discover) ?? ''),
               style: Theme.of(context).textTheme.headline4,
             ),
             const SizedBox(height: 20),
@@ -44,7 +44,8 @@ class DiscoverScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    S.of(context).translate(LanguageKey.newDate).toUpperCase(),
+                    S.of(context).translate(LanguageKey.newDate) ??
+                        ''.toUpperCase(),
                     style: Theme.of(context).textTheme.bodyText2!.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
@@ -62,7 +63,8 @@ class DiscoverScreen extends StatelessWidget {
             Container(
               alignment: Alignment.centerLeft,
               child: Text(
-                S.of(context).translate(LanguageKey.browerAll).toUpperCase(),
+                S.of(context).translate(LanguageKey.browerAll) ??
+                    ''.toUpperCase(),
                 style: Theme.of(context).textTheme.bodyText2!.copyWith(
                       fontWeight: FontWeight.bold,
                     ),

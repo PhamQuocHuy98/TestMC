@@ -48,7 +48,7 @@ class S {
   final String? localeName;
   Map<String, String> _sentences = <String, String>{};
 
-  String translate(String key, {List<dynamic> params = const []}) {
+  String? translate(String? key, {List<dynamic> params = const []}) {
     if (localeName == null) {
       return key;
     }

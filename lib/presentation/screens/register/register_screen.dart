@@ -25,7 +25,7 @@ class RegisterScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 Text(
                   AppHelper.capitalizeFirst(
-                      S.of(context).translate(LanguageKey.register)),
+                      S.of(context).translate(LanguageKey.register)??''),
                   style: Theme.of(context).textTheme.headline4,
                 ),
                 const SizedBox(height: 20),
@@ -45,7 +45,7 @@ class RegisterScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 PrimaryButton(
                   width: double.infinity,
-                  labelText: S.of(context).translate(LanguageKey.signUp),
+                  labelText: S.of(context).translate(LanguageKey.signUp)??'',
                   onPressed: () {},
                 ),
                 const SizedBox(height: 20),

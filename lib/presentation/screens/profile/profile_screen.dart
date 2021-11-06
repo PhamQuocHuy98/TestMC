@@ -1,4 +1,3 @@
-
 import 'package:demo_mc/bloc/app_bloc.dart';
 import 'package:demo_mc/core/language/internationalization.dart';
 import 'package:demo_mc/core/theme/theme.dart';
@@ -34,8 +33,8 @@ class ProfileScreen extends StatelessWidget {
                 },
               ),
               Expanded(
-                  child:
-                      Text(S.of(context).translate(LanguageKey.changeTheme))),
+                  child: Text(
+                      S.of(context).translate(LanguageKey.changeTheme) ?? '')),
             ],
           ),
           Row(
@@ -58,7 +57,8 @@ class ProfileScreen extends StatelessWidget {
               ),
               Expanded(
                   child: Text(
-                      S.of(context).translate(LanguageKey.changeLanguage))),
+                      S.of(context).translate(LanguageKey.changeLanguage) ??
+                          '')),
             ],
           ),
         ],

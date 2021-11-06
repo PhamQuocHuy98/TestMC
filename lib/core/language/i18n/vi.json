@@ -11,5 +11,7 @@
     "browerAll": "Duyệt tất cả",
     "seeMore": "Xem tất cả",
     "changeTheme": "Đổi theme",
-    "changeLanguage": "Đổi ngôn ngữ"
+    "changeLanguage": "Đổi ngôn ngữ",
+    "emailInvalid": "Email không hợp lệ",
+    "passwordInvalid": "Password không hợp lệ"
 }

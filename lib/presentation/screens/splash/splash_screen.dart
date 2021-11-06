@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Expanded(
                 child: PrimaryButton(
-                  labelText: S.of(context).translate(LanguageKey.login),
+                  labelText: S.of(context).translate(LanguageKey.login)??'',
                   onPressed: () {
                     Navigator.of(context).pushNamed(Routes.login);
                   },
@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
               const SizedBox(width: 10),
               Expanded(
                 child: PrimaryButton(
-                  labelText: S.of(context).translate(LanguageKey.register),
+                  labelText: S.of(context).translate(LanguageKey.register)??'',
                   onPressed: () {
                     Navigator.of(context).pushNamed(Routes.register);
                   },

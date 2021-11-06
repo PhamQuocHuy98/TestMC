@@ -48,6 +48,8 @@ class LanguageKey {
   static String newDate = "newDate";
   static String browerAll = "browerAll";
   static String seeMore = "seeMore";
-   static String changeTheme = "changeTheme";
-    static String changeLanguage = "changeLanguage";
+  static String changeTheme = "changeTheme";
+  static String changeLanguage = "changeLanguage";
+  static String emailInvalid = "emailInvalid";
+  static String passwordInvalid = "passwordInvalid";
 }
