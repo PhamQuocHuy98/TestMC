@@ -44,7 +44,8 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
           return SingleChildScrollView(
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
-              alignment: Alignment.center,
+              alignment:
+                  AppHelper.isMobile() ? Alignment.topLeft : Alignment.center,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

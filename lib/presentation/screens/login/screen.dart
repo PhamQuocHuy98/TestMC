@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bmprogresshud/progresshud.dart';
 import 'package:demo_mc/core/language/internationalization.dart';
 import 'package:demo_mc/presentation/widgets/custom_appbar.dart';
@@ -44,7 +46,8 @@ class _LoginScreenState extends State<LoginScreen> {
           builder: (context, state) {
             return Container(
               margin: const EdgeInsets.only(left: 20, right: 20),
-              alignment: Alignment.center,
+              alignment:
+                  AppHelper.isMobile() ? Alignment.topLeft : Alignment.center,
               child: SingleChildScrollView(
                 child: Form(
                   key: loginBloc.formKey,
