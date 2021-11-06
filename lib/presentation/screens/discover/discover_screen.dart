@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:demo_mc/core/language/internationalization.dart';
 import 'package:demo_mc/presentation/widgets/custom_avt_with_info.dart';
+import 'package:demo_mc/presentation/widgets/custom_button.dart';
 import 'package:demo_mc/presentation/widgets/round_corner_image.dart';
 import 'package:demo_mc/utils/app_constants.dart';
 import 'package:demo_mc/utils/app_helper.dart';
@@ -87,6 +88,15 @@ class DiscoverScreen extends StatelessWidget {
                 return StaggeredTile.count(1, index.isEven ? 1.2 : 1.8);
               },
             ),
+            const SizedBox(height: 20),
+            PrimaryButton(
+              labelText: S.of(context).translate(LanguageKey.seeMore) ?? '',
+              colorText: Colors.black,
+              width: double.infinity,
+              color: Colors.white,
+              onPressed: () {},
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
