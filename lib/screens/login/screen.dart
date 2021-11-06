@@ -1,4 +1,7 @@
+import 'package:demo_mc/core/language/internationalization.dart';
 import 'package:demo_mc/screens/login/login_bloc.dart';
+import 'package:demo_mc/utils/app_constants.dart';
+import 'package:demo_mc/utils/app_helper.dart';
 import 'package:demo_mc/utils/routes.dart';
 import 'package:demo_mc/widgets/custom_appbar.dart';
 import 'package:demo_mc/widgets/custom_button.dart';
@@ -22,7 +25,8 @@ class LoginScreen extends StatelessWidget {
               children: [
                 const SizedBox(height: 20),
                 Text(
-                  'Log in',
+                  AppHelper.capitalizeFirst(
+                      S.of(context).translate(LanguageKey.login)),
                   style: Theme.of(context).textTheme.headline4?.copyWith(
                         color: Colors.black,
                       ),
@@ -39,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 PrimaryButton(
                   width: double.infinity,
-                  labelText: 'log in',
+                  labelText: S.of(context).translate(LanguageKey.login),
                   onPressed: () {
                     Navigator.of(context).pushNamed(Routes.dashboard);
                   },

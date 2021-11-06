@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
 import 'my_app.dart';
 
-void main() {
-  runApp(const MyApp());
+GetIt getIt = GetIt.instance;
+Future<void> main() async {
+  await runMyApp();
 }

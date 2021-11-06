@@ -1,4 +1,6 @@
+import 'package:demo_mc/core/language/internationalization.dart';
 import 'package:demo_mc/utils/app_assets.dart';
+import 'package:demo_mc/utils/app_constants.dart';
 import 'package:demo_mc/utils/dimen.dart';
 import 'package:demo_mc/utils/routes.dart';
 import 'package:demo_mc/widgets/custom_avt_with_info.dart';
@@ -40,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Expanded(
                 child: PrimaryButton(
-                  labelText: 'log in',
+                  labelText: S.of(context).translate(LanguageKey.login),
                   onPressed: () {
                     Navigator.of(context).pushNamed(Routes.login);
                   },
@@ -51,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen> {
               const SizedBox(width: 10),
               Expanded(
                 child: PrimaryButton(
-                  labelText: 'register',
+                  labelText: S.of(context).translate(LanguageKey.register),
                   onPressed: () {
                     Navigator.of(context).pushNamed(Routes.register);
                   },

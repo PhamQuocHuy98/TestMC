@@ -4,7 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'core/language/internationalization.dart';
 import 'core/services/app_services.dart';
 import 'core/theme/app_theme.dart';
 import 'screens/splash/splash_screen.dart';
@@ -15,7 +17,7 @@ Future<void> runMyApp() async {
 
   // final language = Get.find<LanguageService>();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -33,6 +35,23 @@ class _MyAppState extends State<MyApp> {
       theme: AppThemes.lightTheme,
       home: const SplashScreen(),
       onGenerateRoute: RouteGenerator.buildRoutes,
+      localizationsDelegates: const [
+        SLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      // localeResolutionCallback: (locale, supportedLocales) {
+      //   // Check if the current device locale is supported
+      //   for (var supportedLocale in supportedLocales) {
+      //     if (supportedLocale.languageCode == locale?.languageCode) {
+      //       return supportedLocale;
+      //     }
+      //   }
+      //   // If the locale of the device is not supported, use the first one
+      //   // from the list (English, in this case).
+      //   return supportedLocales.first;
+      // },
       supportedLocales: const [
         Locale(LocaleKey.en),
         Locale(LocaleKey.vi),

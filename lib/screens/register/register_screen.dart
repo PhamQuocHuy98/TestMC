@@ -1,4 +1,7 @@
+import 'package:demo_mc/core/language/internationalization.dart';
 import 'package:demo_mc/screens/register/register_bloc.dart';
+import 'package:demo_mc/utils/app_constants.dart';
+import 'package:demo_mc/utils/app_helper.dart';
 import 'package:demo_mc/widgets/custom_appbar.dart';
 import 'package:demo_mc/widgets/custom_button.dart';
 import 'package:demo_mc/widgets/custom_textfield.dart';
@@ -21,7 +24,8 @@ class RegisterScreen extends StatelessWidget {
               children: [
                 const SizedBox(height: 20),
                 Text(
-                  'Register',
+                  AppHelper.capitalizeFirst(
+                      S.of(context).translate(LanguageKey.register)),
                   style: Theme.of(context).textTheme.headline4?.copyWith(
                         color: Colors.black,
                       ),
@@ -43,7 +47,7 @@ class RegisterScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 PrimaryButton(
                   width: double.infinity,
-                  labelText: 'sign up',
+                  labelText: S.of(context).translate(LanguageKey.signUp),
                   onPressed: () {},
                 ),
                 const SizedBox(height: 20),
@@ -51,21 +55,22 @@ class RegisterScreen extends StatelessWidget {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: 'By signing up, you agree to Photo’s ',
+                        text: S.of(context).translate(LanguageKey.bySignUp),
                         style: Theme.of(context).textTheme.bodyText2,
                       ),
                       TextSpan(
-                        text: 'Terms of Service',
+                        text:
+                            ' ${S.of(context).translate(LanguageKey.termNService)}',
                         style: Theme.of(context).textTheme.bodyText2!.copyWith(
                               decoration: TextDecoration.underline,
                             ),
                       ),
                       TextSpan(
-                        text: ' and ',
+                        text: ' ${S.of(context).translate(LanguageKey.and)} ',
                         style: Theme.of(context).textTheme.bodyText2,
                       ),
                       TextSpan(
-                        text: 'Privacy Policy.',
+                        text: S.of(context).translate(LanguageKey.policy),
                         style: Theme.of(context).textTheme.bodyText2!.copyWith(
                               decoration: TextDecoration.underline,
                             ),

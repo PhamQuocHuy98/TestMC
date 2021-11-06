@@ -1,7 +1,10 @@
 import 'dart:ui';
 
+import 'package:demo_mc/core/language/internationalization.dart';
 import 'package:demo_mc/utils/app_assets.dart';
 import 'package:demo_mc/utils/app_colors.dart';
+import 'package:demo_mc/utils/app_constants.dart';
+import 'package:demo_mc/utils/app_helper.dart';
 import 'package:demo_mc/utils/dimen.dart';
 import 'package:demo_mc/widgets/custom_appbar.dart';
 import 'package:demo_mc/widgets/custom_avt_with_info.dart';
@@ -35,7 +38,8 @@ class DiscoverScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Discover',
+              AppHelper.capitalizeFirst(
+                  S.of(context).translate(LanguageKey.discover)),
               style: Theme.of(context).textTheme.headline4?.copyWith(
                     color: Colors.black,
                   ),
@@ -47,7 +51,7 @@ class DiscoverScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "What's new today".toUpperCase(),
+                    S.of(context).translate(LanguageKey.newDate).toUpperCase(),
                     style: Theme.of(context).textTheme.bodyText2!.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
@@ -65,7 +69,7 @@ class DiscoverScreen extends StatelessWidget {
             Container(
               alignment: Alignment.centerLeft,
               child: Text(
-                "Browser all".toUpperCase(),
+                S.of(context).translate(LanguageKey.browerAll).toUpperCase(),
                 style: Theme.of(context).textTheme.bodyText2!.copyWith(
                       fontWeight: FontWeight.bold,
                     ),

@@ -6,8 +6,9 @@ class AppConstant {
   static const String resetPassQuery = 'code';
 }
 
-class KeyDemo{
-  static const String avt = 'https://phunugioi.com/wp-content/uploads/2020/03/hinh-nen-may-tinh-4k-de-thuong-scaled.jpg';
+class KeyDemo {
+  static const String avt =
+      'https://phunugioi.com/wp-content/uploads/2020/03/hinh-nen-may-tinh-4k-de-thuong-scaled.jpg';
 }
 
 class ErrorMessage {
@@ -31,4 +32,18 @@ class LocaleKey {
 
 class SizeConstant {
   static double maxWebWidth = 500.0;
+}
+
+class LanguageKey {
+  static String login = "login";
+  static String register = "register";
+  static String signUp = "signUp";
+  static String bySignUp = "bySignUp";
+  static String termNService = "termNService";
+   static String policy = "policy";
+  static String and = "and";
+  static String discover = "discover";
+  static String newDate = "newDate";
+  static String browerAll = "browerAll";
+  static String seeMore = "seeMore";
 }
